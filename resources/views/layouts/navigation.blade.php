@@ -11,9 +11,10 @@
                 </div>
 
                 <!-- Navigation Links -->
+                @if(Auth::user()->name!="Carlos")
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                         Tablero 
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -31,6 +32,19 @@
                           Usuarios
                     </x-nav-link>
                 </div>
+                @else
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                <x-nav-link :href="route('dashboardCliente')" :active="request()->routeIs('dashboardCliente')">
+                          Tablero
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('family')" :active="request()->routeIs('family')">
+                          Mi Familia
+                    </x-nav-link>
+                </div>
+
+                @endif
             </div>
 
             <!-- Settings Dropdown -->

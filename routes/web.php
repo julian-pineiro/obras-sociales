@@ -21,6 +21,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/dashboardCliente', function () {
+    return view('dashboardCliente');
+})->middleware(['auth'])->name('dashboardCliente');
+
 Route::get('/features', function () {
     return view('features');
 })->middleware(['auth'])->name('features');
@@ -28,6 +32,18 @@ Route::get('/features', function () {
 Route::get('/plans', function () {
     return view('plans');
 })->middleware(['auth'])->name('plans');
+
+Route::get('/refunds', function () {
+    return view('refunds');
+})->middleware(['auth'])->name('refunds');
+
+Route::get('/searchclients', function () {
+    return view('searchClients');
+})->middleware(['auth'])->name('searchclients');
+
+Route::get('/family', function () {
+    return view('family');
+})->middleware(['auth'])->name('family');
 
 Route::get('/users', function () {
     return view('users');
